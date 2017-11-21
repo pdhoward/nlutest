@@ -6,31 +6,16 @@
 /////////////////////////////////////////////////////////////
 const clone =             require('clone-deep')
 const request = 					require('request')
-const { Api,
-        searchAgents } =	require('../api')
-const { getAllAgents,
-        getNextAction } =	require('../api')
+const { parseMessage } =	require('../api')
 
 // parse - uses nlu to identify parts of the text
 
-exports.intent = (obj) => {
+exports.parse = (obj) => {
   return new Promise((resolve, reject) => {
-    console.log("--------INTENT Stage (watson classifier) ---------")
-    // natural language classifier - determine next best action based on
-    // no context and no direct messaging for a text received
-    // and pull the agent from the agent array
+    console.log("--------{Parse} Stage (watson understanding) ---------")
 
-    if (obj.state.direct === true ) {
-      console.log("intent detected direct")
-      obj.state.intent=false            // direct calls detected on earlier stage
-      resolve(obj)                     //  so no need to analyze message for intent
-      return
-    }
-    console.log("intent detected")
-    obj.state.intent=true
-
-    // call watson classifier to analyze message for intent
-    getNextAction(obj, function(error, response) {
+    // call watson nlu to determine parts of the text
+    parseMessage(message, function(error, response) {
       	let agent = searchAgents(response.top_class)
         obj.classifier = clone(response)
         obj.intent = {}

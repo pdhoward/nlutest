@@ -52,9 +52,7 @@ redis.on('message', function (channel, message) {
     console.log("Channel> " + channel + " Message> " + message);
     awaitThread(message).then((workObj) => {
     console.log("-------ROUTE AWAIT COMPLETED-------")
-    //console.log(workObj)
-    res.json(workObj)
-    res.end()
+    console.log(workObj)
     return
   }).catch((err) => {
     console.log("ERROR IN THREAD PROCESSING")
@@ -63,11 +61,8 @@ redis.on('message', function (channel, message) {
   });
 
 async function thread(message) {
-  let stage400 = await intent(message)
-  let stage800 = await live(stage500)
-  let stage900 = await response(stage500)
-
-  return stage900
+  let stage400 = await parse(message)
+  return stage400
   }
   // execute function and assess results
 async function awaitThread(msg) {
@@ -82,7 +77,6 @@ function streamparse() {
 //  msgObj.avatarURL = config.target + "/img/avatars/" + img[Math.floor(Math.random() * img.length)] + ".jpg"
 //  let sendMsg = JSON.stringify(msgObj)
   pub.publish(action, sendMsg);
-
 }
 
 function parse() {
