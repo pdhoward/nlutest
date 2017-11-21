@@ -7,7 +7,8 @@ const config =          require('../config')
 
 const classifier = new NLUV1({
   username: config.watsonparsing.username,
-  password: config.watsonparsing.password
+  password: config.watsonparsing.password,
+  version_date: NLUV1.VERSION_DATE_2017_02_27
 });
 
  //////////////////////////////////////////////////////////////////////////

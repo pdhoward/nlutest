@@ -61,7 +61,7 @@ redis.on('message', function (channel, message) {
   });
 
 async function thread(message) {
-  let stage400 = await parseit(message)
+  let stage400 = await parse(message)
   return stage400
   }
   // execute function and assess results
