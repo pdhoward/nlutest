@@ -1,6 +1,6 @@
 ## NLU Test
 
-This is part of ChaoticBots series -- parse messages uses Watson NLU
+This is part of ChaoticBots series -- parse messages using Watson NLU
 
 It features integration with the following technology platforms
 
