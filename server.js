@@ -11,6 +11,7 @@ const path  =         require('path');
 const countries =     require('./countries/country')
 const Redis =         require('ioredis');
 const fs =            require("fs");
+const { parse } =     require('./stages')
 
 const app =  express();
 const server =        require('http').Server(app);
@@ -40,15 +41,6 @@ let action = process.argv[2];
 // to save json file set output to products/products.json -- else set to null
 // Delete the order collection in session db on monglab if json file removed here
 
-switch (action) {
-  case "parse":
-    parse()
-    break;
-
-  default:
-    console.log('Error ' + '' + action + ' not recognized')
-    break;
-}
 
 // subscribe to a channel
 redis.subscribe('product', function (err, count) {
@@ -58,12 +50,32 @@ redis.subscribe('product', function (err, count) {
 // log message when detected on redis channel
 redis.on('message', function (channel, message) {
     console.log("Channel> " + channel + " Message> " + message);
+    awaitThread(message).then((workObj) => {
+    console.log("-------ROUTE AWAIT COMPLETED-------")
+    //console.log(workObj)
+    res.json(workObj)
+    res.end()
+    return
+  }).catch((err) => {
+    console.log("ERROR IN THREAD PROCESSING")
+    console.log(err)
+  })
   });
 
-// publish messages randomly -- test runner for chaotic platform
-// add a country name and avatar chosen randomly from arrays
-// Note that the target in the config file refers to the host and port where the
-// static assets reside which is chaotic dash
+async function thread(message) {
+  let stage400 = await intent(message)
+  let stage800 = await live(stage500)
+  let stage900 = await response(stage500)
+
+  return stage900
+  }
+  // execute function and assess results
+async function awaitThread(msg) {
+      const workObj = await thread(msg)
+      console.log("--------STAGES COMPLETED-------")
+      console.log(workObj)
+  }
+
 function streamparse() {
 //  let msgObj = banterfile[Math.floor(Math.random() * banterfile.length)];
 //  msgObj.flagURL = config.target + "/img/flags/" + countries[Math.floor(Math.random() * countries.length)].name + ".png"

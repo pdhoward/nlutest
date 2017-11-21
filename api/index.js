@@ -17,7 +17,11 @@ const classifier = new NLUV1({
     const token = obj.message.token
 
     classifier.analyze({
-      text: obj.message.Body
+      text: obj,
+      features: {
+        keywords: {},
+        entities: {}
+        }
       },
       function(err, response) {
         if (err) return cb(err)
