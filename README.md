@@ -1,6 +1,6 @@
-## ChaoticIntercom
+## NLU Test
 
-This is part of ChaoticBots series -- reads messages from intercom at a set interval to test platform
+This is part of ChaoticBots series -- parse messages uses Watson NLU
 
 It features integration with the following technology platforms
 
