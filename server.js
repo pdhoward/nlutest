@@ -14,9 +14,8 @@ const fs =            require("fs");
 
 const app =  express();
 const server =        require('http').Server(app);
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 5000;
 
-let client = new Intercom.Client({token: config.intercom.token})
 
 ////////////////////////////////////////////////
 let redisPort =     config.redis.port;
@@ -42,8 +41,8 @@ let action = process.argv[2];
 // Delete the order collection in session db on monglab if json file removed here
 
 switch (action) {
-  case "intercom":
-    intercom()
+  case "parse":
+    parse()
     break;
 
   default:
@@ -52,12 +51,8 @@ switch (action) {
 }
 
 // subscribe to a channel
-redis.subscribe(action, function (err, count) {
+redis.subscribe('product', function (err, count) {
 			console.log("Subscribed to " + count + " channel")
-  });
-// listen for orders
-redis.subscribe('orders', function (err, count) {
-  	 console.log("Subscribed to " + count + " channel")
   });
 
 // log message when detected on redis channel
@@ -69,7 +64,7 @@ redis.on('message', function (channel, message) {
 // add a country name and avatar chosen randomly from arrays
 // Note that the target in the config file refers to the host and port where the
 // static assets reside which is chaotic dash
-function streamintercom() {
+function streamparse() {
 //  let msgObj = banterfile[Math.floor(Math.random() * banterfile.length)];
 //  msgObj.flagURL = config.target + "/img/flags/" + countries[Math.floor(Math.random() * countries.length)].name + ".png"
 //  msgObj.avatarURL = config.target + "/img/avatars/" + img[Math.floor(Math.random() * img.length)] + ".jpg"
@@ -78,47 +73,10 @@ function streamintercom() {
 
 }
 
-function intercom() {
-  /*
+function parse() {
   setInterval(function() {
-  console.log('stream intercom');
-  streambanter()
-}, 5000)
-*/
-client.counts.appCounts(function(err, d) {
-//client.users.list(function (err, d) {
-    if (err) {
-      err.body.errors.filter((item) => console.log(item))
-    }
-    console.log("----------APP COUNTS ------------")
-    console.log(d.body)
-    });
-
-client.counts.conversationCounts(function(err, d) {
-    if (err) {
-      err.body.errors.filter((item) => console.log(item))
-    }
-    console.log("-------- Conversation COUNTS ------------")
-    console.log(d.body)
-    });
-
-client.counts.companyUserCounts(function(err, d) {
-    if (err) {
-      err.body.errors.filter((item) => console.log(item))
-    }
-    console.log("-------Company USER Counts  ---------")
-    d.body.company.user.filter((user) => {
-      console.log(user)
-    })
-  });
-client.users.listBy({ user_id: 'Acumen' }, function(err, d){
-  if (err) {
-    err.body.errors.filter((item) => console.log(item))
-  }
-  console.log("---------List By User ---------")
-  console.log(d)
-  })
-
+  console.log('watson test');
+  }, 5000)
 }
 
 // server spins up and listed for the cli command

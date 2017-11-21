@@ -10,21 +10,18 @@ const classifier = new NLUV1({
   password: config.watsonparsing.password
 });
 
-const API_ID = process.env.REACT_APP_API_ID
-const APP_KEY = process.env.REACT_APP_APP_KEY
-
-
  //////////////////////////////////////////////////////////////////////////
 ///////////// Watson NLU Interaction - Discern Next Action //////////////
 ////////////////////////////////////////////////////////////////////////
   exports.parseMessage = (obj, cb) => {
     const token = obj.message.token
 
-    classifier.classify({
-      text: obj.message.Body,
-      classifier_id: config.watsonclassifier.classifier1 },
+    classifier.analyze({
+      text: obj.message.Body
+      },
       function(err, response) {
         if (err) return cb(err)
+          console.log(response)
           return cb(null, response)
         });
       }
