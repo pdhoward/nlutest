@@ -11,7 +11,7 @@ const path  =         require('path');
 const countries =     require('./countries/country')
 const Redis =         require('ioredis');
 const fs =            require("fs");
-const { parse } =     require('./stages')
+const { parse } =   require('./stages')
 
 const app =  express();
 const server =        require('http').Server(app);
@@ -61,7 +61,7 @@ redis.on('message', function (channel, message) {
   });
 
 async function thread(message) {
-  let stage400 = await parse(message)
+  let stage400 = await parseit(message)
   return stage400
   }
   // execute function and assess results
@@ -78,13 +78,13 @@ function streamparse() {
 //  let sendMsg = JSON.stringify(msgObj)
   pub.publish(action, sendMsg);
 }
-
+/*
 function parse() {
   setInterval(function() {
   console.log('watson test');
   }, 5000)
 }
-
+*/
 // server spins up and listed for the cli command
 server.listen(port, function() {
   console.log("Listening on port " + port)
