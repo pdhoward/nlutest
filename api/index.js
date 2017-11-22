@@ -15,7 +15,7 @@ const classifier = new NLUV1({
 ///////////// Watson NLU Interaction - Discern Next Action //////////////
 ////////////////////////////////////////////////////////////////////////
   exports.parseMessage = (obj, cb) => {
-    const token = obj.message.token
+  //  const token = obj.message.token
 
     classifier.analyze({
       text: obj,

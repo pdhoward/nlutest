@@ -41,9 +41,6 @@ let action = process.argv[2];
 // to save json file set output to products/products.json -- else set to null
 // Delete the order collection in session db on monglab if json file removed here
 
-console.log("DEBUG MODE")
-console.log(typeof parse)
-
 // subscribe to a channel
 redis.subscribe('product', function (err, count) {
 			console.log("Subscribed to " + count + " channel")
