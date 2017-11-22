@@ -11,7 +11,7 @@ const path  =         require('path');
 const countries =     require('./countries/country')
 const Redis =         require('ioredis');
 const fs =            require("fs");
-const { parse } =   require('./stages')
+const { parse } =     require('./stages')
 
 const app =  express();
 const server =        require('http').Server(app);
@@ -41,6 +41,8 @@ let action = process.argv[2];
 // to save json file set output to products/products.json -- else set to null
 // Delete the order collection in session db on monglab if json file removed here
 
+console.log("DEBUG MODE")
+console.log(typeof parse)
 
 // subscribe to a channel
 redis.subscribe('product', function (err, count) {

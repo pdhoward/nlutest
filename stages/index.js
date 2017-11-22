@@ -16,7 +16,11 @@ require('fs').readdirSync(__dirname + '/').forEach(function(file) {
     name = name.replace(/[^a-z]+/gi, ' ');
     name = name.trim().toLowerCase()
     let fn = require('./' + file);
-    exports[name] = fn[name]
 
+    console.log("DEBUG MODE FOR FUNCTION")
+    console.log(name)
+    console.log(fn)
+    exports[name] = fn[name]
+    console.log(exports)
   }
 });
