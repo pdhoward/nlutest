@@ -11,3 +11,18 @@ https://aylien.com/text-api/
 cloudinary -- explore
 
 https://cloudinary.com/
+
+
+---------------
+
+rasa nlu
+https://nlu.rasa.ai/
+https://github.com/RasaHQ/rasa_nlu
+
+Why might you use rasa instead of one of those services?
+
+you don’t have to hand over your data to FB/MSFT/GOOG
+you don’t have to make a https call every time.
+you can tune models to work well on your particular use case.
+
+The HTTP api exists to make it easy for non-python projects to use rasa NLU, and to make it trivial for projects currently using wit/LUIS/Dialogflow to try it out.
