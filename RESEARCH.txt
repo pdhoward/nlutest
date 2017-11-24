@@ -3,7 +3,14 @@
 
 RESEARCH
 
+watson knowledge studio
+https://medium.com/@IdTypeThat/watson-knowledge-studio-tips-tricks-60466df0a204
+
+------------------
+
 https://github.com/thisandagain/sentiment
+
+--------------------
 
 netlify 
 https://aylien.com/text-api/
@@ -33,5 +40,9 @@ enitity extraction
 https://www.paralleldots.com/named-entity-recognition
 
 ------------------
-
+machinejs -- not useful now
 https://github.com/ClimbsRocks/auto_ml
+
+-------------------
+stopword
+https://www.npmjs.com/package/stopword
