@@ -4,3 +4,10 @@
 RESEARCH
 
 https://github.com/thisandagain/sentiment
+
+netlify 
+https://aylien.com/text-api/
+
+cloudinary -- explore
+
+https://cloudinary.com/
