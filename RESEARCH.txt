@@ -31,3 +31,7 @@ The HTTP api exists to make it easy for non-python projects to use rasa NLU, and
 only for people places companies
 enitity extraction
 https://www.paralleldots.com/named-entity-recognition
+
+------------------
+
+https://github.com/ClimbsRocks/auto_ml
