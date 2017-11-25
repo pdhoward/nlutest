@@ -2,6 +2,15 @@
 
 
 RESEARCH
+------------------
+
+clearbit, fullstory, 
+-------------------
+
+machine learning
+https://cms.ibm.com/cloud/machine-learning
+
+----------------
 
 watson knowledge studio
 https://medium.com/@IdTypeThat/watson-knowledge-studio-tips-tricks-60466df0a204
