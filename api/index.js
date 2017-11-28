@@ -23,13 +23,35 @@ const entityID = new NLUV1({
         entities: {
           model: "20:78efab0b-703b-41ad-904c-ecd549d0204b"
         },
-        keywords: {},
-        entities: {}
+        keywords: {}
         }
       },
       function(err, response) {
         if (err) return cb(err)
+
+          ///////////////////
+          console.log(">>>>>>CUSTOM MODEL <<<<<<<<<<<")
           console.log(response)
-          return cb(null, response)
+          ///////////////////////////////
+          ///////////////2nd call for standard MODEL///////
+          ////////////////////////////////////////////////
+          entityID.analyze({
+            text: obj,
+            features: {
+              entities: {
+              },
+              keywords: {}
+              }
+            },
+            function(err, response) {
+              if (err) return cb(err)
+
+                ///////////////////
+                console.log(">>>>>>Standard MODEL <<<<<<<<<<<")
+                console.log(response)
+                return cb(null, response)
+              });
+          ////////////////////////////////////////////////////
+          
         });
       }
