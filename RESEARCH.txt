@@ -1,5 +1,11 @@
 
 
+check out methodology here
+
+https://github.com/tejashah88/json-from-text
+
+------------------
+
 
 RESEARCH
 ------------------
