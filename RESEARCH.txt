@@ -1,4 +1,38 @@
 
+START HERE --- see the auth process and controller for each type of analytics requested 
+
+https://github.com/medic/medic-webapp/blob/master/api/server.js
+
+------------------
+from medic-webapp
+
+npm messageformat  300k
+http://userguide.icu-project.org/formatparse/messages
+
+npm select 2    300k
+
+smart forms
+https://enketo.org/
+https://www.npmjs.com/package/enketo-core  4 k
+
+
+
+--------------------
+
+Kony Engagement Service
+
+Application to showcase the following featues of Kony Engagement Service:
+
+Registering a user as an audience member
+Subscribing to the email, push and sms messages.
+Sending adhoc SMS, Push, Email and pass notifications
+Receiving campaign messages
+Ability to trigger and event and receive event notifications.
+Monitor a set of geoboundaries that are created in the engagement server and receive notifications.
+
+
+
+----------------------------
 
 check out methodology here
 
