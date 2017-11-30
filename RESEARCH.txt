@@ -15,7 +15,10 @@ smart forms
 https://enketo.org/
 https://www.npmjs.com/package/enketo-core  4 k
 
-
+-------------------
+npm tv4     --- schema validation   1700k
+http://json-schema.org/latest/json-schema-validation.html
+http://json-schema.org/examples.html
 
 --------------------
 
