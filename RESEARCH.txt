@@ -1,4 +1,22 @@
 
+https://www.rivescript.com/
+
+https://github.com/friedrith/natural-script
+
+CMU - nuances of intelligence
+http://thetartan.org/2016/4/4/scitech/ai
+
+http://www.casos.cs.cmu.edu/publications/papers/CMU-ISRI-05-115.pdf
+
+scripting languages for ai
+
+https://www.npmjs.com/package/nps
+
+https://github.com/datanews/data-inventories
+
+https://github.com/Zarkonnen/se-interpreter
+
+
 START HERE --- see the auth process and controller for each type of analytics requested 
 
 https://github.com/medic/medic-webapp/blob/master/api/server.js
