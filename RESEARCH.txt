@@ -1,4 +1,7 @@
 
+
+https://www.twilio.com/taskrouter
+
 https://www.rivescript.com/
 
 https://github.com/friedrith/natural-script
@@ -15,6 +18,8 @@ https://www.npmjs.com/package/nps
 https://github.com/datanews/data-inventories
 
 https://github.com/Zarkonnen/se-interpreter
+
+https://github.com/Netoaoh/AppExec
 
 
 START HERE --- see the auth process and controller for each type of analytics requested 
