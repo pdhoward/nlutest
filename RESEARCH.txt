@@ -1,3 +1,12 @@
+
+
+---------
+another tutorial on building a contact center
+https://twilio.radicalskills.com/projects/call_center_specialization/1.html
+-----------
+testing validating json formats
+https://github.com/ianstormtaylor/superstruct/blob/master/Readme.md
+
 -----------
 https://github.com/nash-md/twilio-contact-center
 
